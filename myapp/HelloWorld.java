@@ -8,13 +8,15 @@ import java.util.Scanner;
 public class HelloWorld {
 
     public static void main (String[] args) {
+        // Print Hello World
         System.out.println("Hello World");
 
+        // Prompt for name
         Console console = System.console();
         String name = console.readLine("What is your name?");
+        System.out.println("your name is " + name);
 
-        System.out.println("your name is ..." + name);
-
+        // Prompt for favourite sport
         String sport = console.readLine("What is the sport that you like to do? ");
 
         if (sport.toUpperCase().equals("SWIMMING")) {
@@ -22,12 +24,12 @@ public class HelloWorld {
         } else if (sport.toUpperCase().equals("SOCCER")) {
             System.out.println("It's a world accepted sport");
         } else {
-            System.out.println("I'm not sure about the sports you like");
-    }
+            System.out.println("I'm not sure about the sports you like\n");
+        }
 
+    // Prompt for name and score
     String replacedName = name.replace('a', 'e');
-    System.out.printf("your name .. %s \n", replacedName);
-
+    System.out.printf("your name %s \n", replacedName);
     String valueString = console.readLine("Enter your score between 0 to 100: ");
     Integer score = Integer.parseInt(valueString);
  
@@ -35,9 +37,9 @@ public class HelloWorld {
         case 100: 
         System.out.println("Perfect Score");
         break;
-        case 90:
-        case 91:
-        case 92:
+        case 99:
+        case 98:
+        case 97:
         System.out.println("You scored A");
         break;
         default:
@@ -45,11 +47,17 @@ public class HelloWorld {
         break;
     }
 
+    // while loop
     int i = 0;
     while (i < score) {
-        System.out.print(i + ",");
-        i++; // i = i + 1
-        // i = i + 2, i = i +3
+        if (score <= 99) {
+            System.out.print(i + ",");
+            i++; // i = i + 1
+            // i = i + 2, i = i +3
+        } else {
+            System.out.print(i);
+            i++;
+        }
     }
 
     do {
@@ -60,7 +68,7 @@ public class HelloWorld {
     Integer[] numbers = new Integer[5];
 
     for(int j = 0; j < numbers.length; j++) {
-        Integer inputNumber = Integer.parseInt(console.readLine("Enter your %d number: ", j));
+        Integer inputNumber = Integer.parseInt(console.readLine("\nEnter your %d number: ", j));
         numbers[j] = inputNumber;
     }
     for (Integer pI : numbers) {
