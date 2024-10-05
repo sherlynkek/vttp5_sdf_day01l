@@ -60,10 +60,12 @@ public class HelloWorld {
         }
     }
 
+    // do while loop
     do {
         System.out.print(i + ",");
         i++; // i = i + 1;
     } while (i < score);
+
 
     Integer[] numbers = new Integer[5];
 
@@ -91,21 +93,21 @@ public class HelloWorld {
         for(int y = 0; y < names.length; y++) { 
             System.out.printf("Name[%d]: %s\r\n", y, names[y]);
         }
-    } else {
+        } else {
         System.out.println("No arguement passed");
-    } 
+        } 
 
     List<String> names = new ArrayList<>();
 
    String input = "";
-   do{
+    do {
     input = console.readLine("Enter a name: ");
 
     if (!input.equals("quit")) {
         names.add(input);
     }
 
-   } while (!input.equals("quit"));
+    } while (!input.equals("quit"));
 
    //print out the names
    for (String name1: names) {
@@ -118,13 +120,13 @@ public class HelloWorld {
    keyboardInput = console.readLine("Enter a sentence: ");
    keyboardInput = keyboardInput.replace(',', ' ');
 
-   Scanner scan= new Scanner(keyboardInput);
+   Scanner scan = new Scanner(keyboardInput);
    while(scan.hasNext()) {
     words.add(scan.next());
    }
    scan.close();
 
-   for (int z=0; z < words.size(); z++){
+   for (int z=0; z < words.size(); z++) {
     System.out.printf("%d : %s \r\n", z+1, words.get(z));
    }
    
